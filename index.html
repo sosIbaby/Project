@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="css/styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Azeret+Mono&family=Inter&display=swap" rel="stylesheet">
+    <title>Верстка</title>
+</head>
+
+<body>
+    <div class="box">
+        <div class="content">
+            <div class="text">
+                <h1>Menu</h1>
+                <p>We change our menu every season.<br> Here is what we are currently<br> dishing up.</p>
+                <div class="main-button">
+                    <input class="main active" type="button" value=" Food Menu " onclick="changeImage('img/IMAGE.png')">
+                </div>
+                <input type="button" value=" Drinks Menu " onclick="changeImage('img/IMAGE2.png')">
+                <input type="button" value=" Takeaway Menu " onclick="changeImage('img/IMAGE3.png')">
+            </div>
+            <div class="image">
+                <img name="img" id="image" src="img/IMAGE.png">
+            </div>
+        </div>
+    </div>
+
+    <script>
+        var button1 = document.getElementsByTagName('input')[0];
+        var button2 = document.getElementsByTagName('input')[1];
+        var button3 = document.getElementsByTagName('input')[2];
+        var image = document.getElementById('image');
+
+        function changeImage(img) {
+            image.src = img;
+            button1.classList.remove('active');
+            button2.classList.remove('active');
+            button3.classList.remove('active');
+            if (img == 'img/IMAGE.png') {
+                button1.classList.add('active');
+            } else if (img == 'img/IMAGE2.png') {
+                button2.classList.add('active');
+            } else if (img == 'img/IMAGE3.png') {
+                button3.classList.add('active');
+            }
+        }
+    </script>
+
+</body>
+
+</html>
